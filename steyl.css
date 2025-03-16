@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content{
+    width: 700px;
+    height: 300px;
+}
+.cont-top{
+    width: 100%;
+    height: 100px;
+    background-color: #566573;
+    border-radius: 10px;
+}
+.cont-top-1{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    padding-top: 10px;
+    color: aliceblue;
+}
+.cont-top-2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cont-top-2 input{
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+}
+.cont-top-2 button{
+    padding: 10px 30px;
+    border-radius: 5px 15px;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: large;
+}
+.cont-top-2 button:hover{
+    color: #020202;
+    background-color: rgb(205, 217, 227);
+}
+.cont-top-2 button:active{
+    color: rgb(205, 217, 227);
+    background-color: #020202 ;
+}
+.cont-bottom{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.cont-bottom ul{
+    width: 80%;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.cont-bottom li{
+    width: 100%;
+    height: min-content;
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 2px;
+    border-radius: 2px;
+    transition: background-color  0.2s;
+    user-select: none;
+    cursor: pointer;
+    background-color: #c5d9ecb5;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.cont-bottom li:hover{
+    background-color: #566573b5;
+    color: aliceblue;
+}
+.closeBtn{
+    display: none;
+    position: absolute;
+    right: 15px; 
+}
+ul li:hover .closeBtn{
+    display: inline-block;
+}
+.closeBtn:hover{
+    color: red;
+}
+.text{
+    text-decoration: line-through;
+}

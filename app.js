@@ -1,37 +1,46 @@
+let addBtn = document.querySelector('button');
+let taskList = document.querySelector('ul')
+let input = document.querySelector('input');
+let tasks = [];
 
-const input = document.querySelector('.input');
-const btn = document.querySelector('.btn');
-const list = document.querySelector('.list');
+// Event-Listener für das Hinzufügen von Aufgaben
 
-
-btn.addEventListener('click',()=>{
-    const li = document.createElement('li');
+addBtn.addEventListener('click',()=>{
+    let text = input.value;
+    let task = createTask(text);
     if(input.value===''){
-        alert('Bitte geben Sie einen Wert ein!');
-    }else{
-         li.textContent = input.value;
-         li.innerHTML += `<span class="closeBtn"><i class='bx bxs-trash'></i></span>`
-         list.appendChild(li);
-         input.value = '';
-         input.focus();
-    }
-   
-   // Event-Listener für das Durchstreichen
-    li.addEventListener('click',()=>{
-        li.classList.toggle('text');
-    })
-    
-   // Event-Listener für das Löschen
-    list.addEventListener('click',(e)=>{
-        if(e.target.tagName ==='I'){
-            e.target.parentElement.parentElement.remove();
-
-        }
-    })
+                alert('Bitte geben Sie einen Wert ein!');
+             }else{
+                         task.innerHTML += `<span class="closeBtn"><i class='bx bxs-trash'></i></span>`;
+                         taskList.appendChild(task);
+                         saveTasks(text)
+                         input.value = '';
+                         input.focus();
+                        }
 })
+
+taskList.addEventListener('click',(e)=>{
+    if(e.target.nodeName ==='I'){
+        e.target.parentElement.parentElement.style = 'display:none';
+    }
+    if(e.target.nodeName === 'LI'){
+        e.target.classList.toggle('text');
+    }
+})
+
+function createTask(text){
+    let li = document.createElement('li');
+    li.textContent = text;
+    return li;
+}
+ 
+function saveTasks(text){
+    localStorage.setItem(text,text)
+}
+
 
 input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        btn.click(); 
+        addBtn.click(); 
     }
 });

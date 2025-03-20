@@ -1,7 +1,14 @@
+window.addEventListener('load',showTasks)
 let addBtn = document.querySelector('button');
 let taskList = document.querySelector('ul')
 let input = document.querySelector('input');
-let tasks = [];
+let tasks;
+
+if(!localStorage.getItem('todo')){
+    tasks = [];
+}else{
+    tasks = getTasks();
+}
 
 // Event-Listener für das Hinzufügen von Aufgaben
 
@@ -35,9 +42,20 @@ function createTask(text){
 }
  
 function saveTasks(text){
-    localStorage.setItem(text,text)
+    tasks.push(text);
+    localStorage.setItem('todo',tasks)
 }
+function getTasks(){
+    return localStorage.getItem('todo').split(',');
+}
+function showTasks(){
+    for (let taskText of getTasks()){
+        let task = createTask(taskText);
+        task.innerHTML += `<span class="closeBtn"><i class='bx bxs-trash'></i></span>`;
+        taskList.appendChild(task);
 
+    }
+}
 
 input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {

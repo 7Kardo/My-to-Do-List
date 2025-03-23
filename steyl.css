@@ -12,7 +12,7 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .content{
-    width: 700px;
+    width: 300px;
     height: 300px;
 }
 .cont-top{
@@ -20,13 +20,17 @@ body{
     height: 100px;
     background-color: #566573;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 .cont-top-1{
     width: 100%;
     height: 50%;
     text-align: center;
     padding-top: 10px;
-    color: aliceblue;
+    color: rgb(235, 240, 245);
+}
+.cont-top-1 h1{
+    font-size: 24px;
 }
 .cont-top-2{
     width: 100%;
@@ -36,20 +40,20 @@ body{
     justify-content: center;
 }
 .cont-top-2 input{
-    padding: 10px 30px;
+    padding: 5px 15px;
     border-radius: 5px;
     border: none;
     outline: none;
-    font-size: 15px;
-
+    font-size: 10px;
+    
 }
 .cont-top-2 button{
-    padding: 10px 30px;
+    padding: 5px 15px;
     border-radius: 5px 15px;
     border: none;
     margin-left: 10px;
     cursor: pointer;
-    font-size: large;
+    font-size: 10px;
 }
 .cont-top-2 button:hover{
     color: #020202;
@@ -78,7 +82,7 @@ body{
     width: 100%;
     height: min-content;
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 2px;
     border-radius: 2px;
     transition: background-color  0.2s;
@@ -107,3 +111,41 @@ ul li:hover .closeBtn{
 .text{
     text-decoration: line-through;
 }
+    @media screen and (min-width:481px){
+        .content{
+            width: 350px;
+        }
+        .cont-top-1 h1{
+            font-size: 30px;
+        }
+        
+        .cont-top-2 input{
+            padding: 5px 10px;
+            font-size: 15px;
+        }
+        .cont-top-2 button{
+            padding: 5px 20px;
+            font-size: 15px;
+        }
+       
+      
+    }
+    @media screen and (min-width:768px){
+        .content{
+            width: 700px;
+        }
+        .cont-top-1 h1{
+            font-size: 40px;
+        }
+        .cont-top-2 input{
+            padding: 5px 30px;
+            font-size: 1.5rem;
+        }
+        .cont-top-2 button{
+            padding: 5px 30px;
+            font-size: 1.5rem;
+        }
+        .cont-bottom li{
+            font-size: 1.5rem;
+        }
+    }

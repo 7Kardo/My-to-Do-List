@@ -28,7 +28,10 @@ addBtn.addEventListener('click',()=>{
 
 taskList.addEventListener('click',(e)=>{
     if(e.target.nodeName ==='I'){
-        e.target.parentElement.parentElement.style = 'display:none';
+       let target = e.target.parentElement.parentElement;
+        target.style = 'display:none';
+        tasks.splice(tasks.indexOf(target.textContent) , 1);
+        localStorage.setItem('todo', tasks);
     }
     if(e.target.nodeName === 'LI'){
         e.target.classList.toggle('text');
